@@ -8,6 +8,10 @@ import { MdOutlineWatchLater } from "react-icons/md";
 import MobileComments from './MobileComments';
 import { FaUserCircle } from "react-icons/fa";
 import Tagged from './Tagged';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 
 const SinglePost = ({post}) => {
@@ -35,26 +39,50 @@ const SinglePost = ({post}) => {
         </span>
         <span className='text-[10px] absolute font-normal bottom-0 left-12 mb-[2px]'>{post.place}</span>
        
-        <span className='text-xl absolute right-3 top-3'>
+        <span className='text-xl absolute right-3 top-4'>
         <IoMdMore />
         </span>
       </header>
-      <main className='flex justify-center items-center relative'>
-        <img
-        className='flex w-full max-w-[28rem] min-h-80 max-h-[28rem]'
-        src={post.content} alt="feed" />
-        {post.tagged && 
-        <span className='flex justify-center items-center p-1 text text-[10px] absolute left-3 bottom-3 bg-[#151515] opacity-90 rounded-full w-6 h-6 text-white' onClick={()=>setShowTagged(!showTagged)}>
+      
+      <main className='flex justify-center w-full items-center relative'>
+      <Swiper
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+       { post.content.map(
+        (item, index) => (
+          <SwiperSlide key={index}>
+          <img
+          className={post.content.length > 1 ? 'flex w-full max-w-[28rem] h-[340px]' : 'flex w-full max-w-[28rem] min-h-72 max-h-[400px]'}
+          src={item} alt="feed" />
+
+          {/* tag icon */}
+
+           {post.tagged && 
+        <span className='flex justify-center items-center p-1 text text-[10px] absolute left-3 bottom-3 z-10 bg-[#151515] opacity-90 rounded-full w-6 h-6 text-white' onClick={()=>setShowTagged(!showTagged)}>
           <FaUserCircle />
         </span>
         }
-      </main>
-      <span className='flex w-full h-10 items-center relative py-2 px-3 gap-3 text-xl'>
+          </SwiperSlide>
+       )
+         
+       ) }
+
+       {/* react emojis */}
+       
+        <span className='flex w-full h-10 items-center relative py-2 px-3 pt-2 gap-3 text-xl'>
         <FaRegHeart/>
       <IoChatbubbleOutline onClick={()=>setShowMobCom(true)}/>
       <LuSend />
       <MdOutlineWatchLater className='absolute right-3'/>
       </span>
+      </Swiper>
+      </main>
+     
+      
       <span className='flex text-xs w-full h-5 items-center pl-2 font-bold text-slate-950'>
        {post.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} likes
       </span>

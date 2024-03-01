@@ -30,13 +30,11 @@ const Tagged = ({showTagged, setShowTagged}) => {
             <div className='py-3 px-5'>
             {
                 taggedUSers.map((item)=>(
-                    <div className='flex gap-4 flex-1' key={item.userId}
+                    <div className='flex gap-4' key={item.userId}
                     >
                     <img
                      className={
-                        item.stories
-                          ? "flex items-center justify-center w-14 h-14 rounded-full p-[1px] border-2 mt-3 border-pink-500 object-fill"
-                          : "flex items-center gap-2 relative w-14 h-14 rounded-full justify-center mt-3 object-fill"
+                       "flex items-center gap-2 relative w-14 h-14 rounded-full justify-center mt-3 object-fill"
                       }
                     src={item.pfp} alt="" />
                     <div className='flex-[6] flex flex-col justify-center items-start py-1 tracking-tight text-sm mt-2'>

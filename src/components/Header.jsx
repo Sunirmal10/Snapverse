@@ -28,7 +28,7 @@ const Header = () => {
     }, []);
 
   return (
-    <header className='flex py-2 px-3 justify-between items-center max-h-14 text-xl sticky top-0 left-0 right-0 z-20 bg-white shadow-sm'>
+    <header className='flex py-2 px-3 justify-between items-center max-h-14 text-xl z-20 bg-white shadow-sm'>
         <div className='lobster-font flex gap- tracking-tight justify-center items-center relative'>SnapVerse
         <button className='font-bold p-0 m-0 border-0 absolute bottom-0 right-[-24px]'
         ref={btnRef}
