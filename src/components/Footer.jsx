@@ -9,7 +9,7 @@ import { userProfile } from '../Data';
 
 const Footer = () => {
   return (
-    <footer className='flex justify-evenly gap-7 z-20 bg-white pt-3 pb-4 px-3 text-2xl fixed bottom-0 left-0 right-0'>
+    <footer className='flex justify-evenly gap-7 z-10 bg-white pt-3 pb-4 px-3 text-2xl fixed bottom-0 left-0 right-0'>
         <Link to={"/"}>
         <GoHome />
         {/* <GoHomeFill /> */}

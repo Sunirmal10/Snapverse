@@ -20,7 +20,7 @@ const Stories = () => {
         {/* other users */}
 
       { storyData?.map((item)=> (
-            <div className='flex flex-col items-center gap-3 border-[3px] p-1 border-pink-500 relative w-16 h-16 rounded-full
+            <div className='flex flex-col items-center gap-3 border-[3px] p-[3px] border-pink-500 relative w-16 h-16 rounded-full
             
             '
             key={item.id}
