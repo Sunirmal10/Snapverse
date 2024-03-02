@@ -20,26 +20,24 @@ const Stories = () => {
     
     window.addEventListener('resize', handleResize(window.innerWidth));
 
-  }, [])
+  }, [windowWidth])
   
-  console.log(windowWidth, window.innerWidth)
+  console.log(windowWidth, window.innerWidth, "width")
 
   return (
-    <div className='flex justify-center text-[10px] sm:mt-5 max-w-[40rem] tracking-tighter font-medium h-[84px] py-2 pl-3'>
+    <div className='flex justify-center text-[10px] md:mt-5
+    xxs:w-[320px] xs:w-[425px] sm:w-[40rem] max-w-[40rem] tracking-tighter font-medium h-[84px] py-2 pl-3'>
 
         <Swiper
          slidesPerView={
-         (windowWidth <= 320) ? 4
-         :
-         (windowWidth > 320 && windowWidth <= 425) ? 5
-         :
-         (windowWidth > 425 && windowWidth <= 540) ? 6
-         :
-         (windowWidth > 540 && windowWidth <= 640) ? 8
-         : 8
-         
+          (windowWidth <= 320) ? 4
+          :
+          (windowWidth > 320 && windowWidth <= 425) ? 5
+          :
+          (windowWidth > 425 && windowWidth <= 640) ? 6
+          : 8          
          }
-         spaceBetween={10}
+         spaceBetween={5}
          freeMode={true}
          mousewheel={true}
 

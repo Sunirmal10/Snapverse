@@ -25,26 +25,19 @@ const SinglePost = ({post}) => {
 
   const handleResize = (width) => {
     setWindowWidth(width)
-    if (width > 425) {
-      const pagination = document.querySelector(".swiper-pagination");
-    
-      pagination.style.marginBottom = '40px';
 
-      // const activeBullet = document.querySelector(".swiper-pagination-bullet-active");
+    // const pageClass = document.querySelector(".swiper-pagination");
 
-      // activeBullet.style.background = 'white';
-    
-    }
   }
 
   useEffect(() => {
     
     window.addEventListener('resize', handleResize(window.innerWidth));
 
-  }, [])
+  }, [windowWidth])
 
   return (
-    <div className='w-full max-w-[425px] flex flex-col tracking-tight'>
+    <div className='xxs:w-[320px] xs:w-[425px] max-w-[425px] flex flex-col tracking-tight relative'>
       <header className='flex py-2 pl-2 pr-3 gap-1 relative text-sm font-semibold items-center justify-start'>
       <div className={post.stories ?
       'flex flex-col items-center gap-2 relative justify-center w-8 h-8 rounded-full mr-1 mt-1 p-[1.5px] border-2 border-pink-500'
@@ -68,12 +61,15 @@ const SinglePost = ({post}) => {
         <IoMdMore />
         </span>
       </header>
+
+      {/* main post -img or video */}
       
       <main className='flex justify-center w-full items-center relative'>
       <Swiper
         pagination={{
           dynamicBullets: window.innerWidth <= 425 ? true : false,
           dynamicMainBullets: 2,
+         
         }}
         navigation={
           window.innerWidth > 425 && true
@@ -84,8 +80,11 @@ const SinglePost = ({post}) => {
        { post.content.map(
         (item, index) => (
           <SwiperSlide key={index}>
+
+            {/* image */}
+
           <img
-          className={post.content.length > 1 ? 'flex justify-center w-full max-w-[425px] h-[340px]' : 'flex w-[425px] min-h-72 max-h-[400px]'}
+          className={post.content.length > 1 ? 'flex justify-center w-[320px] xs:w-[425px] max-w-[425px] h-[340px]' : 'flex w-[425px] min-h-72 max-h-[400px]'}
           src={item} alt="feed" />
 
           {/* tag icon */}
@@ -100,21 +99,24 @@ const SinglePost = ({post}) => {
          
        ) }
 
-       {/* react emojis */}
+      </Swiper>
+      </main>
+
+      
+       {/* reactions -like, comment, share and save */}
        
-        <span className='flex w-full max-w-[425px] h-10 items-center relative py-2 px-3 pt-2 gap-3 text-xl'>
+       <span className='flex w-full max-w-[425px] h-10 items-center  py-2 px-3 pt-2 gap-3 text-xl'>
         <FaRegHeart/>
       <IoChatbubbleOutline onClick={()=>setShowMobCom(true)}/>
       <LuSend />
       <MdOutlineWatchLater className='absolute right-3'/>
       </span>
-      </Swiper>
-      </main>
      
       
       <span className='flex text-xs w-full h-5 items-center pl-2 font-bold text-slate-950'>
        {post.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} likes
       </span>
+        {/* caption */}
       <span className=' px-2 w-full h-auto text-xs'>
         <span className='font-bold flex-wrap'>{post.handleId} </span>
         { showMore ?
@@ -130,7 +132,7 @@ const SinglePost = ({post}) => {
            post.caption 
         
         }
-        {/* {text} */}
+      
       </span>
       <span className='text-gray-600 w-full h-4 pt-1 text-xs tracking-tight px-2' 
       onClick={()=>setShowMobCom(!showMobCom)}

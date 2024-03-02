@@ -8,7 +8,7 @@ import RightBar from '../components/RightBar'
 
 const Home = () => {
   return (
-    <div className='flex flex-col sm:items-center'>
+    <div className='flex flex-col w-full xs:items-center'>
         <Header/>
         <main className='p-0 m-0 flex w-full'>
           <LeftNavBar/>

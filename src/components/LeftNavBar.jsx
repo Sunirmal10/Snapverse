@@ -14,7 +14,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 const LeftNavBar = () => {
   return (
-    <div className="flex flex-col p-3 w-[16rem] border-r-[1.5px] border-r-gray-200 mr-28 h-full sticky top-0 left-0">
+    <div className="hidden md:flex flex-col p-3 w-[14rem] lg:w-[16rem] border-r-[1.5px] border-r-gray-200 mr-4 lg:mr-28 h-full sticky top-0 left-0 z-20">
       <header className="lobster-font w-full pl-2 flex text-2xl tracking-tight justify-start items-center relative mb-8 mt-4">
         SnapVerse
       </header>
