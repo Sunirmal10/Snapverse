@@ -9,7 +9,7 @@ import { userProfile } from '../Data';
 
 const Footer = () => {
   return (
-    <footer className='flex justify-evenly gap-7 z-10 bg-white pt-3 pb-4 px-3 text-2xl fixed bottom-0 left-0 right-0'>
+    <footer className='flex sm:hidden justify-evenly gap-7 z-10 bg-white pt-3 pb-4 px-3 text-2xl fixed bottom-0 left-0 right-0'>
         <Link to={"/"}>
         <GoHome />
         {/* <GoHomeFill /> */}
@@ -24,7 +24,7 @@ const Footer = () => {
         <BiMoviePlay />
         </Link>
         <Link to={"/profile"}>
-        <div className='flex flex-col items-center gap-2 border-2 border-slate-200 relative w-6 h-6 rounded-full bg-red-200'>
+        <div className='flex flex-col items-center gap-2 border-2 border-slate-200 relative w-6 h-6 rounded-full'>
             <img
             className='w-full h-full rounded-full object-fill'
             src={userProfile?.pfp || "../assets/images/userpng.png"} alt="pro_pic" />

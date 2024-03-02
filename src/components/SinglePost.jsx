@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMdMore } from "react-icons/io";
 import { MdVerified } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
@@ -11,7 +11,8 @@ import Tagged from './Tagged';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
 
 
 const SinglePost = ({post}) => {
@@ -20,10 +21,30 @@ const SinglePost = ({post}) => {
   const [showMobCom, setShowMobCom] = useState(false)
   const [showTagged, setShowTagged] = useState(false)
 
-  const text = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, similique atque commodi totam itaque assumenda, et odit nobis sit excepturi architecto ducimus laudantium at? Eaque nam ipsam voluptates numquam culpa"
+  const [windowWidth, setWindowWidth] = useState()
+
+  const handleResize = (width) => {
+    setWindowWidth(width)
+    if (width > 425) {
+      const pagination = document.querySelector(".swiper-pagination");
+    
+      pagination.style.marginBottom = '40px';
+
+      // const activeBullet = document.querySelector(".swiper-pagination-bullet-active");
+
+      // activeBullet.style.background = 'white';
+    
+    }
+  }
+
+  useEffect(() => {
+    
+    window.addEventListener('resize', handleResize(window.innerWidth));
+
+  }, [])
 
   return (
-    <div className='w-full flex flex-col tracking-tight'>
+    <div className='w-full max-w-[425px] flex flex-col tracking-tight'>
       <header className='flex py-2 pl-2 pr-3 gap-1 relative text-sm font-semibold items-center justify-start'>
       <div className={post.stories ?
       'flex flex-col items-center gap-2 relative justify-center w-8 h-8 rounded-full mr-1 mt-1 p-[1.5px] border-2 border-pink-500'
@@ -36,6 +57,10 @@ const SinglePost = ({post}) => {
       <span className={post.place !== "" ? 'flex gap-1 mb-2' : 
     'flex gap-1'}>{post.handleId}
         {post.verified && <MdVerified className=' text-blue-500 mt-1' />}
+        <span className='text-gray-400 px-[1px]'>•</span>
+        <span className=' hidden sm:block text-[10px] text-gray-400 tracking-tight mt-[2px]'>
+        2d
+      </span>
         </span>
         <span className='text-[10px] absolute font-normal bottom-0 left-12 mb-[2px]'>{post.place}</span>
        
@@ -47,16 +72,20 @@ const SinglePost = ({post}) => {
       <main className='flex justify-center w-full items-center relative'>
       <Swiper
         pagination={{
-          dynamicBullets: true,
+          dynamicBullets: window.innerWidth <= 425 ? true : false,
+          dynamicMainBullets: 2,
         }}
-        modules={[Pagination]}
+        navigation={
+          window.innerWidth > 425 && true
+          }
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
        { post.content.map(
         (item, index) => (
           <SwiperSlide key={index}>
           <img
-          className={post.content.length > 1 ? 'flex w-full max-w-[28rem] h-[340px]' : 'flex w-full max-w-[28rem] min-h-72 max-h-[400px]'}
+          className={post.content.length > 1 ? 'flex justify-center w-full max-w-[425px] h-[340px]' : 'flex w-[425px] min-h-72 max-h-[400px]'}
           src={item} alt="feed" />
 
           {/* tag icon */}
@@ -73,7 +102,7 @@ const SinglePost = ({post}) => {
 
        {/* react emojis */}
        
-        <span className='flex w-full h-10 items-center relative py-2 px-3 pt-2 gap-3 text-xl'>
+        <span className='flex w-full max-w-[425px] h-10 items-center relative py-2 px-3 pt-2 gap-3 text-xl'>
         <FaRegHeart/>
       <IoChatbubbleOutline onClick={()=>setShowMobCom(true)}/>
       <LuSend />
@@ -89,24 +118,27 @@ const SinglePost = ({post}) => {
       <span className=' px-2 w-full h-auto text-xs'>
         <span className='font-bold flex-wrap'>{post.handleId} </span>
         { showMore ?
-        text 
+      post.caption
         :
-           text.length > 100 ?
+          post.caption.length > 100 ?
            <span>
-              { text.slice(0,90) }... <span className='text-gray-600'
+              { post.caption.slice(0,90) }... <span className='text-gray-600'
               onClick={()=>setShowMore(true)}
               >more</span>
-           </span>   
-           : text
+           </span>
+           : 
+           post.caption 
+        
         }
+        {/* {text} */}
       </span>
       <span className='text-gray-600 w-full h-4 pt-1 text-xs tracking-tight px-2' 
       onClick={()=>setShowMobCom(!showMobCom)}
       >
         View all {post.comments.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} comments
       </span>
-      <span className='text-[10px] text-gray-600 tracking-tight mb-1 pl-2 pt-2'>
-        5 hours ago
+      <span className='block sm:hidden text-[10px] text-gray-600 tracking-tight mb-1 pl-2 pt-2'>
+       {post.time}
       </span>
 
         {/* comment box */}

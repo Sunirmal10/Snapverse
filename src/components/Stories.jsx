@@ -1,22 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { storyData, userProfile } from '../Data';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import { FreeMode, Mousewheel } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { FreeMode, Mousewheel, Navigation } from 'swiper/modules';
 import '../index.css'
 
 const Stories = () => {
+
+  const [windowWidth, setWindowWidth] = useState()
+
+  const handleResize = (width) => {
+    setWindowWidth(width)
+  }
+
+  useEffect(() => {
+    
+    window.addEventListener('resize', handleResize(window.innerWidth));
+
+  }, [])
+  
+  console.log(windowWidth, window.innerWidth)
+
   return (
-    <div className='flex text-[10px] tracking-tighter font-medium h-[84px] py-2 pl-3'>
+    <div className='flex justify-center text-[10px] sm:mt-5 max-w-[40rem] tracking-tighter font-medium h-[84px] py-2 pl-3'>
 
         <Swiper
-         slidesPerView={4}
-         spaceBetween={5}
+         slidesPerView={
+         (windowWidth <= 320) ? 4
+         :
+         (windowWidth > 320 && windowWidth <= 425) ? 5
+         :
+         (windowWidth > 425 && windowWidth <= 540) ? 6
+         :
+         (windowWidth > 540 && windowWidth <= 640) ? 8
+         : 8
+         
+         }
+         spaceBetween={10}
          freeMode={true}
          mousewheel={true}
-        modules={[FreeMode, Mousewheel]}
+
+         navigation={
+         windowWidth > 425 && true
+         }
+
+
+        modules={[FreeMode, Mousewheel, Navigation]}
         className='mySwiper'>
             {/* user */}
             <SwiperSlide>
