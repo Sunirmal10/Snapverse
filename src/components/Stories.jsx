@@ -49,7 +49,7 @@ const Stories = () => {
         modules={[FreeMode, Mousewheel, Navigation]}
         className='mySwiper'>
             {/* user */}
-            <SwiperSlide>
+            <SwiperSlide className='block md:hidden'>
         <div
          className='flex flex-col items-center gap-2 border-[2px] border-gray-300 relative w-16 h-16 rounded-full'
          >

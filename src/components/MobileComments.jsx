@@ -20,7 +20,8 @@ const MobileComments = ({ showMobCom, setShowMobCom }) => {
             className="text-5xl mt-[-12px] text-gray-600"
             onClick={() => setShowMobCom(false)}
           />
-          <span className="text-[14px] tracking-tight font-bold mt-[-4px]">
+          <span className="text-[10px] text-gray-400 opacity-70 font-medium tracking-tighter mt-[-18px]">Tap to close</span>
+          <span className="text-[14px] tracking-tight font-bold mt-1">
             Comments
           </span>
         </header>

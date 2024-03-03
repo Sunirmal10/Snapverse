@@ -7,8 +7,7 @@ export default {
   theme: {
     screens: {
       'xxs': '320px', // min-width: 320
- 
-  
+      'xms': '375px',
       'xs': '425px', 
       'sm': '640px', 
       'md': '768px', 

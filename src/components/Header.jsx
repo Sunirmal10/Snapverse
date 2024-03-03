@@ -4,6 +4,7 @@ import { RiMessengerLine } from "react-icons/ri";
 import { RxCaretDown } from "react-icons/rx";
 import { SlPeople } from "react-icons/sl";
 import { FaRegStar } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -29,7 +30,8 @@ const Header = () => {
 
   return (
     <header className='flex md:hidden py-2 px-3 justify-between items-center max-h-14 text-xl z-20 bg-white shadow-sm w-full'>
-        <div className='lobster-font flex tracking-tight justify-center items-center relative'>SnapVerse
+        <div className='lobster-font flex tracking-tight justify-center items-center relative'>
+        <Link to={"/"}>SnapVerse</Link>
         <button className='font-bold p-0 m-0 border-0 absolute bottom-0 right-[-24px]'
         ref={btnRef}
         onClick={()=>setShowDropdown(!showDropdown)}

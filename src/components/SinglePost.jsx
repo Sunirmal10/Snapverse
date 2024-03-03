@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { IoMdMore } from "react-icons/io";
+import { IoMdMore, IoIosMore, IoMdArrowDropup } from "react-icons/io";
 import { MdVerified } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { IoChatbubbleOutline } from "react-icons/io5";
@@ -13,6 +13,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
+import { taggedUSers } from '../Data';
+import { PiSmiley } from "react-icons/pi";
 
 
 const SinglePost = ({post}) => {
@@ -20,8 +22,11 @@ const SinglePost = ({post}) => {
   const [showMore, setShowMore] = useState(false)
   const [showMobCom, setShowMobCom] = useState(false)
   const [showTagged, setShowTagged] = useState(false)
+  const [showTaggedLarge, setShowTaggedLarge] = useState(false)
 
   const [windowWidth, setWindowWidth] = useState()
+
+
 
   const handleResize = (width) => {
     setWindowWidth(width)
@@ -29,6 +34,17 @@ const SinglePost = ({post}) => {
     // const pageClass = document.querySelector(".swiper-pagination");
 
   }
+
+  const showTagFunction = () => {
+
+    console.log(windowWidth)
+
+   if (windowWidth >= 768) setShowTaggedLarge(!showTaggedLarge)
+
+
+    
+  
+}
 
   useEffect(() => {
     
@@ -38,7 +54,7 @@ const SinglePost = ({post}) => {
 
   return (
     <div className='xxs:w-[320px] xs:w-[425px] max-w-[425px] flex flex-col tracking-tight relative'>
-      <header className='flex py-2 pl-2 pr-3 gap-1 relative text-sm font-semibold items-center justify-start'>
+      <header className='flex py-2 pl-2 pr-3 md:pl-0 md:pr-0 gap-1 relative text-sm font-semibold items-center justify-start'>
       <div className={post.stories ?
       'flex flex-col items-center gap-2 relative justify-center w-8 h-8 rounded-full mr-1 mt-1 p-[1.5px] border-2 border-pink-500'
       :
@@ -55,16 +71,18 @@ const SinglePost = ({post}) => {
         2d
       </span>
         </span>
-        <span className='text-[10px] absolute font-normal bottom-0 left-12 mb-[2px]'>{post.place}</span>
+        <span className='text-[10px] absolute font-normal bottom-0 left-12 md:left-11 mb-[2px]'>{post.place}</span>
        
-        <span className='text-xl absolute right-3 top-4'>
-        <IoMdMore />
+        <span className= { windowWidth > 768 ? 'text-xl absolute right-0 top-4' : 'text-xl absolute right-0 top-4'}>
+       { windowWidth > 768 ? <IoIosMore className='' /> : <IoMdMore />}
         </span>
       </header>
 
-      {/* main post -img or video */}
+      {/* main post - img or video */}
       
-      <main className='flex justify-center w-full items-center relative'>
+      <main className='flex justify-center w-full items-center relative'
+     onClick={showTagFunction}
+      >
       <Swiper
         pagination={{
           dynamicBullets: window.innerWidth <= 425 ? true : false,
@@ -85,7 +103,9 @@ const SinglePost = ({post}) => {
 
           <img
           className={post.content.length > 1 ? 'flex justify-center w-[320px] xs:w-[425px] max-w-[425px] h-[340px]' : 'flex w-[425px] min-h-72 max-h-[400px]'}
-          src={item} alt="feed" />
+          src={item} alt="feed"
+          
+          />
 
           {/* tag icon */}
 
@@ -94,6 +114,21 @@ const SinglePost = ({post}) => {
           <FaUserCircle />
         </span>
         }
+
+        {/* tags for large screen */}
+
+{ post.tagged && showTaggedLarge && <div className={ 'flex flex-col gap-2 absolute bottom-4 right-2 z-50'}>
+  {
+    taggedUSers.map((item)=>(
+      <span
+      className='flex bg-[#151515] relative opacity-90 w-full rounded pt-1 pb-2 px-3 font-medium tracking-tight justify-center items-center text-white'
+      key={item.userId}>
+        <IoMdArrowDropup className='absolute bg-transparent text-3xl opacity-90 text-[#151515] bottom-[22px]'/>
+        {item.handleId}</span>
+    ))
+  }
+</div>}
+
           </SwiperSlide>
        )
          
@@ -105,11 +140,11 @@ const SinglePost = ({post}) => {
       
        {/* reactions -like, comment, share and save */}
        
-       <span className='flex w-full max-w-[425px] h-10 items-center  py-2 px-3 pt-2 gap-3 text-xl'>
+       <span className={ windowWidth < 768 ? 'flex w-full max-w-[425px] h-10 items-center py-2 px-3 pt-2 gap-3 text-xl' :  'flex w-full max-w-[425px] h-10 items-center py-2 px-0 pt-2 gap-3 text-xl'}>
         <FaRegHeart/>
       <IoChatbubbleOutline onClick={()=>setShowMobCom(true)}/>
       <LuSend />
-      <MdOutlineWatchLater className='absolute right-3'/>
+      <MdOutlineWatchLater className={ windowWidth < 768 ? 'absolute right-3' : 'absolute right-0' }/>
       </span>
      
       
@@ -153,14 +188,29 @@ const SinglePost = ({post}) => {
 <MobileComments showMobCom={showMobCom} setShowMobCom={setShowMobCom}/>
 </div>
 
-<div
+{/* for large devices */}
+
+<div className='flex w-full h-10 mt-2 pb-1 gap-1 items-center border-b-[1px] border-b-gray-300'>
+  <input type="text" className='pl-2 text-sm w-[85%]' placeholder='Add a comment....'/>
+  <span className='text-sm font-semibold text-blue-500'>Post</span>
+  <PiSmiley className='flex-2 ml-1 mt-[2px] text-gray-500'/>
+</div>
+
+{/* Tags */}
+
+{/* tags for small devices */}
+
+{ windowWidth < 768 && <div
 className={showTagged ? 'flex fixed top-0 left-0 right-0 w-full h-full z-40' : 'top-[40rem]'}>
 <Tagged showTagged={showTagged} setShowTagged={setShowTagged}/>
-</div>
+</div>}
+
+
 
      
     </div>
   )
+
 }
 
 export default SinglePost

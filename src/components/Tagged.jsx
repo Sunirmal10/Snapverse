@@ -23,7 +23,8 @@ const Tagged = ({showTagged, setShowTagged}) => {
             onClick={() => setShowTagged(false)}
           
             />
-          <span className="text-[14px] tracking-tight font-bold mt-[-10px]">
+              <span className="text-[10px] text-gray-400 opacity-70 font-medium tracking-tighter mt-[-18px]">Tap to close</span>
+          <span className="text-[14px] tracking-tight font-bold">
             In this photo
           </span>
             </header>
