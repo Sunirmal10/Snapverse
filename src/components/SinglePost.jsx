@@ -15,6 +15,7 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 import { taggedUSers } from '../Data';
 import { PiSmiley } from "react-icons/pi";
+import { Link } from 'react-router-dom';
 
 
 const SinglePost = ({post}) => {
@@ -53,9 +54,10 @@ const SinglePost = ({post}) => {
   }, [windowWidth])
 
   return (
-    <div className='xxs:w-[320px] xs:w-[425px] max-w-[425px] flex flex-col tracking-tight relative'>
+    <div className='xxs:w-[320px] xms:w-[375px] xs:w-[425px] max-w-[425px] flex flex-col tracking-tight relative'>
       <header className='flex py-2 pl-2 pr-3 md:pl-0 md:pr-0 gap-1 relative text-sm font-semibold items-center justify-start'>
-      <div className={post.stories ?
+      <Link to={"#"}>
+        <div className={post.stories ?
       'flex flex-col items-center gap-2 relative justify-center w-8 h-8 rounded-full mr-1 mt-1 p-[1.5px] border-2 border-pink-500'
       :
       'flex flex-col items-center gap-2 relative w-8 h-8 rounded-full mr-1 mt-1 border-2 border-gray-200'}>
@@ -63,17 +65,22 @@ const SinglePost = ({post}) => {
             className='w-full h-full rounded-full object-fill'
             src={post.pfp} alt="pro_pic" />
         </div>
+        </Link>
       <span className={post.place !== "" ? 'flex gap-1 mb-2' : 
-    'flex gap-1'}>{post.handleId}
+    'flex gap-1'}>
+      <Link to={"#"}>
+      {post.handleId}
+      </Link>
         {post.verified && <MdVerified className=' text-blue-500 mt-1' />}
         <span className='text-gray-400 px-[1px]'>•</span>
         <span className=' hidden sm:block text-[10px] text-gray-400 tracking-tight mt-[2px]'>
         2d
       </span>
         </span>
+     
         <span className='text-[10px] absolute font-normal bottom-0 left-12 md:left-11 mb-[2px]'>{post.place}</span>
        
-        <span className= { windowWidth > 768 ? 'text-xl absolute right-0 top-4' : 'text-xl absolute right-0 top-4'}>
+        <span className= { windowWidth > 768 ? 'text-xl absolute right-0 top-4 cursor-pointer' : 'text-xl absolute right-2 top-4 cursor-pointer'}>
        { windowWidth > 768 ? <IoIosMore className='' /> : <IoMdMore />}
         </span>
       </header>
@@ -102,7 +109,7 @@ const SinglePost = ({post}) => {
             {/* image */}
 
           <img
-          className={post.content.length > 1 ? 'flex justify-center w-[320px] xs:w-[425px] max-w-[425px] h-[340px]' : 'flex w-[425px] min-h-72 max-h-[400px]'}
+          className={post.content.length > 1 ? 'flex justify-center w-[320px] xms:w-[375px] xs:w-[425px] max-w-[425px] h-[340px]' : 'flex w-[425px] min-h-72 max-h-[400px]'}
           src={item} alt="feed"
           
           />
@@ -141,10 +148,10 @@ const SinglePost = ({post}) => {
        {/* reactions -like, comment, share and save */}
        
        <span className={ windowWidth < 768 ? 'flex w-full max-w-[425px] h-10 items-center py-2 px-3 pt-2 gap-3 text-xl' :  'flex w-full max-w-[425px] h-10 items-center py-2 px-0 pt-2 gap-3 text-xl'}>
-        <FaRegHeart/>
-      <IoChatbubbleOutline onClick={()=>setShowMobCom(true)}/>
-      <LuSend />
-      <MdOutlineWatchLater className={ windowWidth < 768 ? 'absolute right-3' : 'absolute right-0' }/>
+        <FaRegHeart className='cursor-pointer'/>
+      <IoChatbubbleOutline className='cursor-pointer' onClick={()=>setShowMobCom(true)}/>
+      <LuSend className='cursor-pointer' />
+      <MdOutlineWatchLater className={ windowWidth < 768 ? 'absolute right-3 cursor-pointer' : 'absolute right-0 cursor-pointer' }/>
       </span>
      
       
@@ -159,7 +166,7 @@ const SinglePost = ({post}) => {
         :
           post.caption.length > 100 ?
            <span>
-              { post.caption.slice(0,90) }... <span className='text-gray-600'
+              { post.caption.slice(0,90) }... <span className='text-gray-600 cursor-pointer'
               onClick={()=>setShowMore(true)}
               >more</span>
            </span>
@@ -169,7 +176,7 @@ const SinglePost = ({post}) => {
         }
       
       </span>
-      <span className='text-gray-600 w-full h-4 pt-1 text-xs tracking-tight px-2' 
+      <span className='text-gray-600 w-full h-4 pt-1 text-xs tracking-tight px-2 cursor-pointer' 
       onClick={()=>setShowMobCom(!showMobCom)}
       >
         View all {post.comments.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} comments
@@ -188,20 +195,20 @@ const SinglePost = ({post}) => {
 <MobileComments showMobCom={showMobCom} setShowMobCom={setShowMobCom}/>
 </div>
 
-{/* for large devices */}
+{/* comment box for large devices */}
 
-<div className='flex w-full h-10 mt-2 pb-1 gap-1 items-center border-b-[1px] border-b-gray-300'>
+{ windowWidth >= 640 && <div className='flex w-full h-10 mt-2 pb-1 gap-1 items-center border-b-[1px] border-b-gray-300'>
   <input type="text" className='pl-2 text-sm w-[85%]' placeholder='Add a comment....'/>
-  <span className='text-sm font-semibold text-blue-500'>Post</span>
-  <PiSmiley className='flex-2 ml-1 mt-[2px] text-gray-500'/>
-</div>
+  <span className='text-sm font-semibold text-blue-500 cursor-pointer'>Post</span>
+  <PiSmiley className='flex-2 ml-1 mt-[2px] text-gray-500 cursor-pointer'/>
+</div>}
 
 {/* Tags */}
 
 {/* tags for small devices */}
 
 { windowWidth < 768 && <div
-className={showTagged ? 'flex fixed top-0 left-0 right-0 w-full h-full z-40' : 'top-[40rem]'}>
+className={showTagged ? 'flex fixed top-0 left-0 right-0 w-full h-full z-40 cursor-pointer' : 'top-[40rem] cursor-pointer'}>
 <Tagged showTagged={showTagged} setShowTagged={setShowTagged}/>
 </div>}
 

@@ -14,10 +14,10 @@ const MobileComments = ({ showMobCom, setShowMobCom }) => {
           : "fixed top-[100rem] z-40 w-full transition-all delay-350"
       }
     >
-      <div className=" bg-white w-full h-full mt-24 rounded-t-3xl z-50">
+      <div className=" bg-white w-full h-full mt-24 md:mt-44 rounded-t-3xl md:rounded-md z-50">
         <header className="flex flex-col rounded-t-3xl items-center justify-center pb-2 border-b-2 border-b-slate-800">
           <GoDash
-            className="text-5xl mt-[-12px] text-gray-600"
+            className="text-5xl mt-[-12px] text-gray-600 cursor-pointer"
             onClick={() => setShowMobCom(false)}
           />
           <span className="text-[10px] text-gray-400 opacity-70 font-medium tracking-tighter mt-[-18px]">Tap to close</span>
@@ -25,7 +25,7 @@ const MobileComments = ({ showMobCom, setShowMobCom }) => {
             Comments
           </span>
         </header>
-        <main className="flex flex-col py-2 px-3 gap-3 overflow-scroll h-[380px] scroll-smooth">
+        <main className="flex flex-col py-2 px-3 gap-3 overflow-y-scroll h-[380px] scroll-smooth">
           {comments.map((item) => (
             <div key={item.id} className="flex justify-evenly gap-3">
               <div

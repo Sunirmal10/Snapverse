@@ -15,7 +15,7 @@ const Tagged = ({showTagged, setShowTagged}) => {
       
     >
 
-      <div className=" bg-white w-full h-full mt-96 rounded-t-3xl z-50" >
+      <div className=" bg-white w-full h-full mt-96 rounded-t-3xl md:rounded-md z-50" >
         <header className="flex flex-col rounded-t-3xl items-center justify-center pb-2 border-b-2 border-b-gray-300">
 
           <GoDash

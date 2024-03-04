@@ -11,8 +11,6 @@ function App() {
     <Routes>
     <Route path="/" exact element={<Home/>} />
         <Route path="/profile" element={<ProfilePage/>} />
-        {/* <Route path="/channel/:id" element={<ChannelDetail/>} />
-        <Route path="/search/:searchTerm" element={<SearchFeed/>} /> */}
     </Routes>
     </BrowserRouter>
   )

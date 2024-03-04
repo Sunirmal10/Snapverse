@@ -9,7 +9,7 @@ import Main from "../components/Main";
 
 const Home = () => {
   return (
-    <div className="flex flex-col w-full xs:items-center">
+    <div className="flex bg-white dark:bg-[#151515] flex-col w-full xs:items-center">
       <Header />
       <main className="p-0 m-0 flex w-full">
         <LeftNavBar />

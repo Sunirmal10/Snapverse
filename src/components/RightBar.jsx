@@ -4,7 +4,8 @@ import { storyData, userProfile } from '../Data'
 
 const RightBar = () => {
 
-  const year = new Date().getFullYear
+  let date = new Date();
+  let year = date.getFullYear();
 
   return (
     <div className='hidden xl:flex flex-col w-[18rem] m-2 ml-24'>
@@ -53,16 +54,16 @@ const RightBar = () => {
       </main>
       <footer className='flex flex-col text-xs font-medium text-gray-400 gap-4 mt-5 mb-1'>
         <span className='w-full flex tracking-tighter font-normal flex-wrap gap-1'>
-         <Link>About</Link>•
-         <Link>Help</Link>•
-         <Link>Press</Link>•
-         <Link>API</Link>•
-         <Link>Jobs</Link>•
-         <Link>Privacy</Link>•
-         <Link>Terms</Link>•
-         <Link>Locations</Link>•
-         <Link>Language</Link>•
-         <Link>Snap Verified</Link>
+         <Link to={"#"}>About</Link>•
+         <Link to={"#"}>Help</Link>•
+         <Link to={"#"}>Press</Link>•
+         <Link to={"#"}>API</Link>•
+         <Link to={"#"}>Jobs</Link>•
+         <Link to={"#"}>Privacy</Link>•
+         <Link to={"#"}>Terms</Link>•
+         <Link to={"#"}>Locations</Link>•
+         <Link to={"#"}>Language</Link>•
+         <Link to={"#"}>Snap Verified</Link>
         </span>
         <span>
         © {year} SNAPVERSE PROJECT
