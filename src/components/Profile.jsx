@@ -11,9 +11,9 @@ import { BiMoviePlay, BiUserPin } from "react-icons/bi";
 
 const Profile = () => {
   return (
-    <div className="flex flex-col gap-2 xxs:w-[320px] xms:w-[375px] xs:w-[425px] sm:w-[640px] lg:mx-20">
+    <div className="flex flex-col gap-2 xxs:w-[320px] h-full xms:w-[375px] xs:w-[425px] sm:w-[640px] lg:mx-20">
       {/* header for small screens */}
-      <header className="flex md:hidden gap-1 w-full fixed justify-between items-center py-2 px-4 bg-white dark:bg-[#151515] shadow-sm">
+      <header className="flex md:hidden gap-1 w-full fixed justify-between items-center py-2 px-4 dark:text-white bg-white dark:bg-[#151515] shadow-sm">
         <span className="flex gap-1 items-center">
           <LuLock className="text-xs" />
           <span className="text-lg font-bold ml-1">{userProfile.handleId}</span>
@@ -33,57 +33,57 @@ const Profile = () => {
           {/* pro pic */}
           <div className="flex justify-center items-center gap-2">
             <img
-              className="w-16 h-16 border-2 border-gray-300 rounded-full"
+              className="w-16 h-16 border-2 border-gray-300 dark:border-transparent rounded-full"
               src={userProfile.pfp}
               alt="pro_pic"
             />
           </div>
 
           {/* posts followers following */}
-          <div className="posts flex flex-col items-center">
+          <div className="posts flex flex-col items-center dark:text-white">
             <span className="font-bold">{userProfile.posts}</span>
             <span className="text-xs font-medium">Posts</span>
           </div>
-          <div className="followers flex flex-col items-center">
-            <span className="font-bold">{userProfile.followers}</span>
+          <div className="followers flex flex-col items-center dark:text-white">
+            <span className="font-bold dark:text-white">{userProfile.followers}</span>
             <span className="text-xs font-medium">Followers</span>
           </div>
-          <div className="following flex flex-col items-center">
+          <div className="following flex flex-col items-center dark:text-white">
             <span className="font-bold">{userProfile.following}</span>
             <span className="text-xs font-medium">Following</span>
           </div>
         </div>
         {/* name and pronouns */}
         <span className="flex w-full justify-start gap-1 text-gray-500 my-1 px-5 text-xs">
-          <span className="font-bold text-slate-900"> {userProfile.name}</span>{" "}
+          <span className="font-bold text-slate-900 dark:text-white"> {userProfile.name}</span>{" "}
           {userProfile.pronouns}
         </span>
         {/* bio */}
-        <div className="flex w-full h-auto flex-wrap px-5 text-xs font-normal py-3 tracking-tight">
+        <div className="flex w-full h-auto flex-wrap px-5 text-xs font-normal py-3 tracking-tight dark:text-white">
           {userProfile.bio}
         </div>
         {/* Edit profile etc buttons */}
         <div className="flex xxs:gap-[5px] w-full justify-center sm:justify-start xs:gap-2 px-4">
-          <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 hover:bg-gray-400 py-1 px-6">
+          <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-400 hover:bg-gray-400 dark:hover-zinc-500 py-1 px-6">
             Edit profile
           </button>
-          <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 hover:bg-gray-400 py-1 px-6">
+          <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-400 hover:bg-gray-400 dark:hover-zinc-500 py-1 px-6">
             Share profile
           </button>
-          <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 py-1 px-2">
+          <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-400 py-1 px-2">
             <AiOutlineUserAdd />
           </button>
         </div>
         {/* story highlights */}
         <div className="flex flex-col w-full">
-          <span className="text-xs font-bold px-5 mt-3 mb-2">
+          <span className="text-xs font-bold px-5 mt-3 mb-2 dark:text-white">
             Story highlights
           </span>
           {/* story circle add */}
-          <span className="flex px-5 w-full justify-start items-center">
-            <div className="flex justify-center items-center p-3 border-[1px] text-xl border-gray-600 relative rounded-full w-14 h-14">
+          <span className="flex px-5 w-full justify-start items-center mb-2">
+            <div className="flex justify-center items-center p-3 border-[1px] text-xl border-gray-600 dark:border-white dark:text-white relative rounded-full w-14 h-14">
               <IoMdAdd />
-              <span className="text-[10px] tracking-tighter text-gray-600 absolute top-14 font-medium">
+              <span className="text-[10px] tracking-tighter text-gray-600 dark:text-white absolute top-14 font-medium">
                 New
               </span>
             </div>
@@ -92,14 +92,14 @@ const Profile = () => {
         {/* pics videos tags etc */}
         <div className="flex w-full flex-col mt-8">
           {/* icons */}
-          <div className="flex w-full h-10">
-            <span className="flex border-b-slate-800 border-b-[2px] justify-center items-center flex-1 text-2xl">
+          <div className="flex w-full 0">
+            <span className="flex border-b-slate-800 dark:text-white dark:border-b-white border-b-[2px] justify-center items-center flex-1 text-2xl">
               <IoMdGrid />
             </span>
-            <span className="flex justify-center items-center flex-1 text-gray-400 text-2xl">
+            <span className="flex justify-center items-center flex-1 text-zinc-400 text-2xl">
               <BiMoviePlay />
             </span>
-            <span className="flex justify-center items-center flex-1 text-gray-400 text-2xl">
+            <span className="flex justify-center items-center flex-1 text-zinc-400 text-2xl">
               <BiUserPin />
             </span>
           </div>
@@ -128,7 +128,7 @@ const Profile = () => {
           {/* pro pic */}
           <div className="flex justify-center h-auto gap-2">
             <img
-              className="w-28 h-28 border-2 border-gray-300 rounded-full"
+              className="w-28 h-28 border-2 border-gray-300 dark:border-transparent rounded-full"
               src={userProfile.pfp}
               alt="pro_pic"
             />
@@ -136,25 +136,25 @@ const Profile = () => {
           {/* right section of pro pic */}
           <div className="flex flex-col h-10 gap-4 md:gap-2 items-center justify-start">
             <span className="flex items-center">
-              <span className="text-lg font-medium">
+              <span className="text-lg font-medium dark:text-white">
                 {userProfile.handleId}
               </span>
               {/* Edit profile etc buttons */}
               <div className="flex xxs:gap-[5px] w-full justify-center sm:justify-start xs:gap-2 px-3">
-                <button className="rounded-lg flex justify-center items-center text-sm font-semibold bg-gray-300 py-2 px-4 md:px-3 hover:bg-gray-400">
+                <button className="rounded-lg flex justify-center items-center text-sm font-semibold bg-gray-300 py-2 px-4 md:px-3 hover:bg-gray-400 hover:dark:bg-zinc-600 dark:text-white dark:bg-zinc-500">
                   Edit profile
                 </button>
-                <button className="rounded-lg flex justify-center items-center text-sm font-semibold bg-gray-300 py-1 px-4 md:px-3 hover:bg-gray-400">
+                <button className="rounded-lg flex justify-center items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-500 py-1 px-4 md:px-3 hover:bg-gray-400 hover:dark:bg-zinc-600 dark:text-white">
                   Share profile
                 </button>
-                <button className="rounded-lg flex justify-center items-center text-2xl font-semibold px-2">
+                <button className="rounded-lg flex justify-center items-center text-2xl font-semibold px-2 dark:text-white">
                   <IoIosSettings />
                 </button>
               </div>
             </span>
 
             {/* posts followers following */}
-            <div className="flex justify-between w-full">
+            <div className="flex justify-between w-full dark:text-white">
               <div className="posts flex gap-2 items-center">
                 <span className="font-bold">{userProfile.posts}</span>
                 <span className="text-xs font-medium">Posts</span>
@@ -175,7 +175,7 @@ const Profile = () => {
 
             {/* bio */}
 
-            <div className="flex w-full flex-wrap justify-start text-sm ">
+            <div className="flex w-full flex-wrap justify-start text-sm dark:text-white">
               {userProfile.bio}
             </div>
           </div>
@@ -184,7 +184,7 @@ const Profile = () => {
 
               <div>
               <span className="flex px-5 w-full justify-start items-center">
-            <div className="flex justify-center items-center p-3 border-[1px] text-xl border-gray-400 relative rounded-full w-14 h-14">
+            <div className="flex justify-center items-center p-3 border-[1px] text-xl border-gray-400 dark:text-white relative rounded-full w-14 h-14">
               <IoMdAdd />
               <span className="text-[10px] tracking-tighter text-gray-400 absolute top-14 font-medium">
                 New
@@ -194,14 +194,14 @@ const Profile = () => {
               </div>
 
         {/* pics videos saved tags */}
-        <div className="w-full border-t-2 mt-5 border-gray-300">
+        <div className="w-full border-t-2 mt-5 border-gray-300 dark:border-gray-400">
           {/* icons */}
           <div className="flex h-14 text-sm font-medium gap-10 justify-center">
-            <div className=" border-t-2 border-t-slate-900 mt-[-1px] flex items-center justify-center gap-2 cursor-pointer"> <IoMdGrid className="mt-[2px]" />
+            <div className=" border-t-2 border-t-slate-900 dark:border-t-white mt-[-1px] flex items-center dark:text-white justify-center gap-2 cursor-pointer"> <IoMdGrid className="mt-[2px]" />
               POSTS</div>
-            <div className="flex items-center justify-center text-gray-400 gap-2 cursor-pointer"><MdOutlineWatchLater className="mt-[2px]" />
+            <div className="flex items-center justify-center text-zinc-400 gap-2 cursor-pointer"><MdOutlineWatchLater className="mt-[2px]" />
               SAVED</div>
-            <div className="flex items-center justify-center text-gray-400 gap-2 cursor-pointer">
+            <div className="flex items-center justify-center text-zinc-400 gap-2 cursor-pointer">
               <BiUserPin className="mt-[2px]" />
               TAGGED</div>
           </div>

@@ -86,7 +86,7 @@ const MobileComments = ({ showMobCom, setShowMobCom }) => {
             placeholder="Add a comment"
             className="tracking-tighter text-sm dark:text-zinc-500 bg-transparent rounded pl-2 mt-1 focus:outline-none flex-[6]"
           />
-           <div className="flex-1 flex justify-center items-center text-3xl text-slate-800 dark:text-zinc-500">
+           <div className="flex-1 flex justify-center items-center text-3xl text-zinc-700 dark:text-zinc-500">
           <MdOutlineGifBox />
         </div>
         </div>
