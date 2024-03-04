@@ -23,7 +23,7 @@ const RightBar = () => {
         <span className='text-xs font-bold text-blue-400 cursor-pointer'>Switch</span>
       </header>
       <main className='flex flex-col justify-center items-center'>
-        <span className='flex w-full justify-between ic text-sm mt-4 mb-2 text-zinc-500 font-semibold'>
+        <span className='flex w-full justify-between ic text-sm mt-4 mb-2 text-zinc-400 font-semibold'>
           <span>Suggested for you</span>
           <span className='text-xs text-slate-900 dark:text-white font-bold cursor-pointer'>See All</span>
         </span>
