@@ -26,7 +26,7 @@ const Stories = () => {
 
   return (
     <div className='flex justify-center text-[10px] md:mt-5
-    xxs:w-[320px] xms:w-[375px] xs:w-[425px] sm:w-[40rem] max-w-[40rem] tracking-tighter font-medium h-[84px] py-2 pl-3'>
+    xxs:w-[320px] xms:w-[375px] xs:w-[425px] sm:w-[40rem] max-w-[40rem] tracking-tighter font-medium h-[100px] py-2 pl-3'>
 
         <Swiper
          slidesPerView={
@@ -58,7 +58,7 @@ const Stories = () => {
             src={userProfile?.pfp || "../assets/images/userpng.png"} alt="pro_pic" />
             <span>
                 Your story
-            <div className=' flex w-4 h-4 rounded-full absolute border-2 border-white bottom-0 right-0 text-center p-0 m-0 justify-center items-center text-white font-semibold bg-blue-500'>+</div>
+            <div className=' flex w-4 h-4 rounded-full absolute border-2 border-white dark:border-[#151515] bottom-0 right-0 text-center p-0 m-0 justify-center items-center text-white font-semibold bg-blue-500'>+</div>
             </span>
         </div>
         </SwiperSlide>
@@ -74,7 +74,7 @@ const Stories = () => {
             <img
             className='w-full h-full rounded-full object-fill'
             src={item.pfp || "../assets/images/userpng.png"} alt="pro_pic" />
-            <span>
+            <span className='dark:text-white'>
                 {
                    
                     item.name.length > 10 ?  item.name.slice(0,10) + "..." : item.name 

@@ -29,14 +29,14 @@ const Header = () => {
     }, []);
 
   return (
-    <header className='flex md:hidden py-2 px-3 justify-between items-center max-h-14 text-xl z-20 bg-white dark:bg-[#151515] shadow-sm w-full'>
+    <header className='flex md:hidden py-2 px-3 justify-between items-center max-h-14 text-xl z-20 bg-white dark:bg-[#151515] shadow-sm w-full dark:text-white'>
         <div className='lobster-font flex tracking-tight justify-center items-center relative'>
         <Link to={"/"}>SnapVerse</Link>
         <button className='font-bold p-0 m-0 border-0 absolute bottom-0 right-[-24px]'
         ref={btnRef}
         onClick={()=>setShowDropdown(!showDropdown)}
         ><RxCaretDown /></button>
-       { showDropdown && (<div className='font-sans text-[12px] font-semibold bg-[#F5F5F5] dark:bg-slate-800 py-1 px-3 absolute top-8 w-28 shadow-md left-0 rounded' 
+       { showDropdown && (<div className='font-sans text-[12px] font-semibold bg-[#F5F5F5] dark:bg-zinc-900 py-1 px-3 absolute top-8 w-28 drop-shadow-md dark:text-white left-0 rounded' 
        ref={divRef}
        >
             <span className='flex justify-between items-center'>Following <SlPeople/></span>
