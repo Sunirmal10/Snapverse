@@ -41,9 +41,9 @@ const LeftNavBar = () => {
 
 
   return (
-    <div className={hideNav ? "hidden md:flex flex-col p-3 w-[4.5rem] border-r-[1.5px] border-r-gray-200  dark:border-zinc-800 mr-4 lg:mr-20 xl:mr-28 h-full sticky top-1 left-0 z-20 transition-all delay-75 dark:text-white"
+    <div className={hideNav ? "hidden md:flex flex-col p-3 w-[4.5rem] border-r-[1.5px] border-r-gray-200  dark:border-zinc-800 mr-4 lg:mr-24 xl:mr-28 h-full sticky top-1 left-0 z-20 transition-all delay-75 dark:text-white"
     :
-    "hidden md:flex flex-col p-3 w-[14rem] lg:w-[16rem] border-r-[1.5px] border-r-gray-200 dark:border-zinc-800 mr-4 lg:mr-20 xl:mr-28 h-full sticky top-0 left-0 z-20 transition-all delay-75 dark:text-white"
+    "hidden md:flex flex-col p-3 w-[14rem] lg:w-[16rem] border-r-[1.5px] border-r-gray-200 dark:border-zinc-800 mr-4 xl:mr-28 h-full sticky top-0 left-0 z-20 transition-all delay-75 dark:text-white"
   }>
       
       <header className="lobster-font w-full pl-2 flex justify-between text-2xl tracking-tight items-center relative mb-8 mt-4">

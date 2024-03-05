@@ -25,7 +25,7 @@ const Stories = () => {
   console.log(windowWidth, window.innerWidth, "width")
 
   return (
-    <div className='flex justify-center text-[10px] md:mt-5
+    <div className='flex sticky left-0 justify-center text-[10px] md:mt-5
     xxs:w-[320px] xms:w-[375px] xs:w-[425px] sm:w-[40rem] max-w-[40rem] tracking-tighter font-medium h-[100px] py-2 pl-3'>
 
         <Swiper
@@ -37,7 +37,7 @@ const Stories = () => {
           (windowWidth > 425 && windowWidth <= 640) ? 6
           : 8          
          }
-         spaceBetween={5}
+         spaceBetween={1}
          freeMode={true}
          mousewheel={true}
 

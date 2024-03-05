@@ -8,7 +8,7 @@ const RightBar = () => {
   let year = date.getFullYear();
 
   return (
-    <div className='hidden xl:flex flex-col w-[18rem] m-2 ml-24'>
+    <div className='hidden xl:flex flex-col w-[18rem] m-2 ml-8 mr-16'>
       <header className='flex w-full justify-between items-center mt-8'>
       <Link to={"/profile"}>
           <div className='flex justify-center items-center gap-2'>

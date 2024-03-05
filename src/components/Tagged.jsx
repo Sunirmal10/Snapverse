@@ -9,7 +9,7 @@ const Tagged = ({showTagged, setShowTagged}) => {
     <div
       className={
         showTagged
-          ? "flex h-full w-full z-40 fixed top-0 left-0 right-0 transition-all delay-250 bg-gray-800/80"
+          ? "flex h-full w-full z-40 fixed top-0 left-0 right-0 transition-all delay-250 bg-gray-800/80 mb-20"
           : "fixed top-[100rem] z-40 w-full transition-all delay-350"
       }
       

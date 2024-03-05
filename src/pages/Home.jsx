@@ -11,9 +11,9 @@ const Home = () => {
   return (
     <div className="flex bg-white dark:bg-[#151515] flex-col w-full xs:items-center">
       <Header />
-      <main className="p-0 m-0 flex w-full">
+      <main className="p-0 m-0 flex w-full justify-center md:justify-start md:gap-12">
         <LeftNavBar />
-        <Main/>
+        <Main />
         <RightBar />
       </main>
 

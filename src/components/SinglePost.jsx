@@ -109,7 +109,7 @@ const SinglePost = ({post}) => {
             {/* image */}
 
           <img
-          className={post.content.length > 1 ? 'flex justify-center w-[320px] xms:w-[375px] xs:w-[425px] max-w-[425px] h-[340px]' : 'flex w-[425px] min-h-72 max-h-[400px]'}
+          className={post.content.length > 1 ? 'flex justify-center xxs:w-[320px] xms:w-[375px] xs:w-[425px] max-w-[425px] h-[425px] object-contain' : 'flex w-[425px] min-h-72 max-h-[500px] object-cover'}
           src={item} alt="feed"
           
           />
