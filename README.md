@@ -31,7 +31,7 @@ Snapverse is a responsive social media website inspired by Instagram's UI/UX des
 1. Clone the repository:
 
 ```
-git clone (https://github.com/Sunirmal10/snapverse.git
+git clone https://github.com/Sunirmal10/snapverse.git
 ```
 
 2. Navigate to the project directory:
