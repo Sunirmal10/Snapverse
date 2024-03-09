@@ -13,7 +13,8 @@ Snapverse is a responsive social media website inspired by Instagram's UI/UX des
 
   ## Visuals
 
-![snapversepic](https://github.com/Sunirmal10/snapverse/assets/119140881/22d54e7e-903b-459a-99b9-68b772518797)
+![snapversepic](https://github.com/Sunirmal10/snapverse/assets/119140881/ee93ae9e-01a5-437d-a8eb-869bad7f7abf)
+
 
 ![snapmobile](https://github.com/Sunirmal10/snapverse/assets/119140881/a53e7bbb-d66c-447f-a005-9b7910060ba0) ![snapcom](https://github.com/Sunirmal10/snapverse/assets/119140881/a51f891f-e8b4-4992-876c-08a7be23d965)
 
