@@ -6,34 +6,23 @@ import { LuSunMedium, LuMoon } from 'react-icons/lu'
 import { LiaPowerOffSolid } from 'react-icons/lia'
 import { useSearchParams } from 'react-router-dom'
 
-const NavMore = () => {
+const NavMore = ({darkModeOff, setDarkModeOff}) => {
 
-  const [darkModeOff, setDarkModeOff] = useState(true)
+
 
   const toggleDarkMode = () => {
 
     document.documentElement.classList.add('dark');
     document.documentElement.style.backgroundColor = '#151515';
     setDarkModeOff(!darkModeOff)
-    if (darkModeOff) {
-
-    //  const htmlTag = document.getElementsByTagName('html');
-
-    //   htmlTag.style.backgroundColor = "#151515";
-
-    //   htmlTag.classList.add("dark")
-
-    // document.documentElement.classList.add('dark');
-    // document.documentElement.style.backgroundColor = '#151515';
+    if (!darkModeOff) {
+      document.documentElement.classList.remove('dark');
+    }
   
       
-    } else {
-      document.documentElement.classList.remove('dark');
-    };
-    
-  }
+    } 
   return (
-    <div className='flex flex-col rounded-lg w-52 h-72 justify-between gap-1 p-2 py-2 bg-white dark:bg-[#212121] text-sm drop-shadow-xl dark:text-white'>
+    <div className='flex flex-col rounded-lg w-52 h-72 justify-between gap-1 p-2 py-2 bg-white dark:bg-[#212121] text-sm drop-shadow-xl shadow-lg dark:text-white z-10'>
       <div className='flex justify-start gap-2 items-center cursor-pointer hover:bg-gray-100 hover:dark:bg-zinc-800 py-3 pl-1 rounded-md'>
       <FiSettings />
       Settings

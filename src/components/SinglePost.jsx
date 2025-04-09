@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { IoMdMore, IoIosMore, IoMdArrowDropup } from "react-icons/io";
-import { MdVerified } from "react-icons/md";
-import { FaRegHeart } from "react-icons/fa";
+import { MdVerifiedUser } from "react-icons/md";
+
 import { IoChatbubbleOutline } from "react-icons/io5";
-import { LuSend } from "react-icons/lu";
 import { MdOutlineWatchLater } from "react-icons/md";
 import MobileComments from './MobileComments';
-import { FaUserCircle } from "react-icons/fa";
+import { FaShare, FaUserCircle } from "react-icons/fa";
 import Tagged from './Tagged';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -16,6 +15,9 @@ import { Pagination, Navigation } from 'swiper/modules';
 import { taggedUSers } from '../Data';
 import { PiSmiley } from "react-icons/pi";
 import { Link } from 'react-router-dom';
+import { FiThumbsUp } from 'react-icons/fi';
+import { TbShare3 } from 'react-icons/tb';
+import { RiChat1Line } from 'react-icons/ri';
 
 
 const SinglePost = ({post}) => {
@@ -54,11 +56,11 @@ const SinglePost = ({post}) => {
   }, [windowWidth])
 
   return (
-    <div className='xxs:w-[320px] xms:w-[375px] xs:w-[425px] max-w-[425px] flex flex-col tracking-tight relative'>
+    <div className='xxs:w-[320px] xms:w-[375px] xs:w-[425px] max-w-[425px] flex flex-col tracking-tight relative mb-4'>
       <header className='flex py-2 pl-2 pr-3 md:pl-0 md:pr-0 gap-1 relative text-sm font-semibold items-center justify-start'>
       <Link to={"#"}>
         <div className={post.stories ?
-      'flex flex-col items-center gap-2 relative justify-center w-8 h-8 rounded-full mr-1 mt-1 p-[1.5px] border-2 border-pink-500'
+      'flex flex-col items-center gap-2 relative justify-center w-8 h-8 rounded-full mr-1 mt-1 p-[1px] border-2 border-violet-500'
       :
       'flex flex-col items-center gap-2 relative w-8 h-8 rounded-full mr-1 mt-1 border-2 border-gray-200 dark:border-transparent'}>
             <img
@@ -71,7 +73,7 @@ const SinglePost = ({post}) => {
       <Link to={"#"} className='dark:text-white'>
       {post.handleId}
       </Link>
-        {post.verified && <MdVerified className=' text-blue-500 mt-1' />}
+        {post.verified && <MdVerifiedUser className=' text-blue-500 mt-1' />}
         <span className='hidden sm:block text-zinc-400 dark:text-white px-[1px]'>•</span>
         <span className=' hidden sm:block text-[10px] text-zinc-400 dark:text-white tracking-tight mt-[2px]'>
         2d
@@ -124,7 +126,7 @@ const SinglePost = ({post}) => {
 
         {/* tags for large screen */}
 
-{ post.tagged && showTaggedLarge && <div className={ 'flex flex-col gap-2 absolute bottom-4 right-2 z-50'}>
+{/* { post.tagged && showTaggedLarge && <div className={ 'flex flex-col gap-2 absolute bottom-4 right-2 z-50'}>
   {
     taggedUSers.map((item)=>(
       <span
@@ -134,7 +136,7 @@ const SinglePost = ({post}) => {
         {item.handleId}</span>
     ))
   }
-</div>}
+</div>} */}
 
           </SwiperSlide>
        )
@@ -148,9 +150,9 @@ const SinglePost = ({post}) => {
        {/* reactions -like, comment, share and save */}
        
        <span className={ windowWidth < 768 ? 'flex w-full max-w-[425px] h-10 items-center py-2 px-3 pt-2 gap-3 text-xl dark:text-white' :  'flex w-full max-w-[425px] h-10 items-center py-2 px-0 pt-2 gap-3 text-xl dark:text-white'}>
-        <FaRegHeart className='cursor-pointer'/>
-      <IoChatbubbleOutline className='cursor-pointer' onClick={()=>setShowMobCom(true)}/>
-      <LuSend className='cursor-pointer' />
+        <FiThumbsUp className='cursor-pointer'/>
+      <RiChat1Line className='cursor-pointer' onClick={()=>setShowMobCom(true)}/>
+      <TbShare3 className='cursor-pointer' />
       <MdOutlineWatchLater className={ windowWidth < 768 ? 'absolute right-3 cursor-pointer' : 'absolute right-0 cursor-pointer' }/>
       </span>
      

@@ -16,6 +16,7 @@ const LeftNavBar = () => {
 
   const [hideNav, setHideNav] = useState(false)
   const [showNavMore, setShowNavMore] = useState(false)
+  const [darkModeOff, setDarkModeOff] = useState(true)
 
   const handleHideNav = () => {
     setHideNav(!hideNav)
@@ -41,12 +42,12 @@ const LeftNavBar = () => {
 
 
   return (
-    <div className={hideNav ? "hidden md:flex flex-col p-3 w-[4.5rem] border-r-[1.5px] border-r-gray-200  dark:border-zinc-800 mr-4 lg:mr-24 xl:mr-28 h-full sticky top-1 left-0 z-20 transition-all delay-75 dark:text-white"
+    <div className={hideNav ? "hidden md:flex flex-col p-3 w-[4.5rem] border-r-[1.5px] border-r-gray-200  dark:border-zinc-800 mr-4 lg:mr-24 xl:mr-28 h-4/5 sticky top-1 left-0 z-20 transition-all delay-75 dark:text-white"
     :
-    "hidden md:flex flex-col p-3 w-[14rem] lg:w-[16rem] border-r-[1.5px] border-r-gray-200 dark:border-zinc-800 mr-4 xl:mr-28 h-full sticky top-0 left-0 z-20 transition-all delay-75 dark:text-white"
+    "hidden md:flex flex-col p-3 w-[14rem] lg:w-[16rem] border-r-[1.5px] border-r-gray-200 dark:border-zinc-800 mr-4 xl:mr-28 h-4/5 sticky top-0 left-0 z-20 transition-all delay-75 dark:text-white"
   }>
       
-      <header className="lobster-font w-full pl-2 flex justify-between text-2xl tracking-tight items-center relative mb-8 mt-4">
+      <header className="lobster-font w-full pl-2 flex justify-between text-2xl tracking-tight items-center relative mb-4 mt-2">
        <Link to={"/"}>
         {
           hideNav ? <span className={hideNav ? "flex w-7 h-7 text-[8px] font-sans items-center justify-center text-white pb-[2px] italic rounded-full bg-[#AAF] scale-100 transition-all delay-75" : "scale-0 flex transition-all delay-75"}>snap</span>
@@ -57,7 +58,7 @@ const LeftNavBar = () => {
        <div className="text-gray-300 dark:text-zinc-500 cursor-pointer" onClick={handleHideNav}> { hideNav ? <FaCaretRight /> : <FaCaretLeft /> }</div>
       </header>
 
-      <main className="flex flex-col w-full gap-2 mb-10">
+      <main className="flex flex-col w-full gap-1 mb-4">
         <Link to={"/"}>
           <span className="flex gap-4 h-12 py-1 px-2 rounded-lg items-center text-md hover:bg-gray-100 hover:dark:bg-zinc-800 tracking-tight transition-all delay-75">
             <GoHome className="text-[28px] " />
@@ -120,7 +121,7 @@ const LeftNavBar = () => {
           </span>
         </Link>
         <div className="relative">
-        { showNavMore && <div className="absolute z-20 bottom-14 left-2" ref={divRef}><NavMore/></div>}
+        { showNavMore && <div className="absolute z-20 bottom-14 left-2" ref={divRef}><NavMore darkModeOff={darkModeOff} setDarkModeOff={setDarkModeOff} /></div>}
           <span className="flex gap-4 h-12 py-1 px-2 rounded-lg items-center text-md hover:bg-gray-100 hover:dark:bg-zinc-800 tracking-tight transition-all delay-75 cursor-pointer" onClick={()=>setShowNavMore(!showNavMore)}
           ref={btnRef}>
             <RxHamburgerMenu className="text-[28px]" />

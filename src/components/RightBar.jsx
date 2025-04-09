@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { storyData, userProfile } from '../Data'
+import { IoMdPersonAdd } from 'react-icons/io';
 
 const RightBar = () => {
 
@@ -20,12 +21,12 @@ const RightBar = () => {
            
           </div>          
         </Link>
-        <span className='text-xs font-bold text-blue-400 cursor-pointer'>Switch</span>
+        <span className='flex justify-center items-center p-1 rounded-md bg-blue-400 text-xs font-bold text-white cursor-pointer mt-2 w-12 h-6 hover:bg-blue-500'>Switch</span>
       </header>
       <main className='flex flex-col justify-center items-center'>
         <span className='flex w-full justify-between ic text-sm mt-4 mb-2 text-zinc-400 font-semibold'>
-          <span>Suggested for you</span>
-          <span className='text-xs text-slate-900 dark:text-white font-bold cursor-pointer'>See All</span>
+          <span>Recommended</span>
+          <span className='text-xs text-slate-900 dark:text-white font-bold cursor-pointer mr-1'>See All</span>
         </span>
 
         {
@@ -45,14 +46,16 @@ const RightBar = () => {
                  </span>
                 </div>          
               </Link>
-              <span className='text-xs font-bold text-blue-400 cursor-pointer mt-2'>Follow</span>
+              <span className='flex justify-center items-center px-1 rounded-md bg-blue-400 text-xs font-bold text-white cursor-pointer mt-2 w-16 h-6 hover:bg-blue-500 gap-1'>
+              <IoMdPersonAdd />
+                Follow</span>
             </div>
           ))
         }
 
        
       </main>
-      <footer className='flex flex-col text-xs font-medium text-zinc-400 gap-4 mt-5 mb-1'>
+      <footer className='flex flex-col text-xs font-medium text-zinc-400 gap-2 mt-5 mb-1'>
         <span className='w-full flex tracking-tighter font-normal flex-wrap gap-1'>
          <Link to={"#"}>About</Link>•
          <Link to={"#"}>Help</Link>•

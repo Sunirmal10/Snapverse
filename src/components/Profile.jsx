@@ -111,7 +111,7 @@ const Profile = () => {
                         xxs:w-[106px] xms:w-[124px] xs:w-[141px] sm:w-[212px]
                         xxs:h-[106px] xms:h-[124px] xs:h-[141px] sm:h-[212px]
                         "
-                src={pic}
+                src={pic ? pic : "/images/beach.jpg"}
                 alt="post_pic"
                 key={i}
               />
