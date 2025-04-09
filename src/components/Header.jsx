@@ -36,7 +36,7 @@ const Header = () => {
         ref={btnRef}
         onClick={()=>setShowDropdown(!showDropdown)}
         ><RxCaretDown /></button>
-       { showDropdown && (<div className='font-sans text-[12px] font-semibold bg-[#F5F5F5] dark:bg-zinc-900 py-1 px-3 absolute top-8 w-28 drop-shadow-md dark:text-white left-0 rounded' 
+       { showDropdown && (<div className='font-sans text-[12px] font-semibold bg-[#F5F5F5] dark:bg-zinc-900 py-1 px-3 absolute top-8 w-28 drop-shadow-md dark:text-white left-0 rounded z-50' 
        ref={divRef}
        >
             <span className='flex justify-between items-center'>Following <SlPeople/></span>
