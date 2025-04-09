@@ -29,7 +29,7 @@ const Header = () => {
     }, []);
 
   return (
-    <header className='flex md:hidden py-2 px-3 justify-between items-center max-h-14 text-xl z-30 bg-white dark:bg-[#151515] shadow-sm w-full dark:text-white'>
+    <header className='flex sticky top-0 left-0 right-0 md:hidden py-2 px-3 justify-between items-center max-h-14 text-xl z-30 bg-white dark:bg-[#151515] shadow-sm w-full dark:text-white'>
         <div className='lobster-font flex tracking-tight justify-center items-center relative'>
         <Link to={"/"}>SnapVerse</Link>
         <button className='font-bold p-0 m-0 border-0 absolute bottom-0 right-[-24px]'
