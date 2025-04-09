@@ -5,7 +5,7 @@ import AddPost from "./AddPost";
 
 const Main = () => {
   return (
-    <div className="flex flex-col items-center mt-8">
+    <div className="flex flex-col items-center mt-2">
       {/* <Stories /> */}
       <AddPost />
       <Posts />

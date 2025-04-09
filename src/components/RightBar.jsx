@@ -26,7 +26,7 @@ const RightBar = () => {
       <main className='flex flex-col justify-center items-center'>
         <span className='flex w-full justify-between ic text-sm mt-4 mb-2 text-zinc-400 font-semibold'>
           <span>Recommended</span>
-          <span className='text-xs text-slate-900 dark:text-white font-bold cursor-pointer mr-1'>See All</span>
+          <span className='text-xs text-slate-900 dark:text-white font-bold cursor-pointer mr-1 hover:text-slate-500 dark:hover:text-slate-200'>View All</span>
         </span>
 
         {
@@ -46,9 +46,9 @@ const RightBar = () => {
                  </span>
                 </div>          
               </Link>
-              <span className='flex justify-center items-center px-1 rounded-md bg-blue-400 text-xs font-bold text-white cursor-pointer mt-2 w-16 h-6 hover:bg-blue-500 gap-1'>
+              <span className='flex justify-center items-center px-1 rounded-md bg-blue-400 text-xs font-bold text-white cursor-pointer mt-2 w-20 h-6 hover:bg-blue-500 gap-1'>
               <IoMdPersonAdd />
-                Follow</span>
+                Connect</span>
             </div>
           ))
         }

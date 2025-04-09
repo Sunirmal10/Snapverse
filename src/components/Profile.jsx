@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import { userProfile } from "../Data";
 import { IoLockClosed } from "react-icons/io5";
 import { RxCaretDown, RxHamburgerMenu } from "react-icons/rx";
-import { MdOutlineAddBox, MdOutlineWatchLater } from "react-icons/md";
+import { MdOutlineAddBox, MdOutlineEdit, MdOutlineShare, MdOutlineWatchLater } from "react-icons/md";
 import { LuLock } from "react-icons/lu";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { IoIosSettings, IoMdAdd, IoMdGrid } from "react-icons/io";
@@ -33,7 +33,7 @@ const Profile = () => {
           {/* pro pic */}
           <div className="flex justify-center items-center gap-2">
             <img
-              className="w-16 h-16 border-2 border-gray-300 dark:border-transparent rounded-full"
+              className="w-16 h-16 border-2 border-blue-400  p-1 dark:border-transparent rounded-full"
               src={userProfile.pfp}
               alt="pro_pic"
             />
@@ -46,7 +46,7 @@ const Profile = () => {
           </div>
           <div className="followers flex flex-col items-center dark:text-white">
             <span className="font-bold dark:text-white">{userProfile.followers}</span>
-            <span className="text-xs font-medium">Followers</span>
+            <span className="text-xs font-medium">Connections</span>
           </div>
           <div className="following flex flex-col items-center dark:text-white">
             <span className="font-bold">{userProfile.following}</span>
@@ -64,11 +64,11 @@ const Profile = () => {
         </div>
         {/* Edit profile etc buttons */}
         <div className="flex xxs:gap-[5px] w-full justify-center sm:justify-start xs:gap-2 px-4">
-          <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-400 hover:bg-gray-400 dark:hover-zinc-500 py-1 px-6">
-            Edit profile
+          <button className="rounded flex justify-center gap-2 items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-400 hover:bg-gray-400 dark:hover-zinc-500 py-1 px-6">
+          <MdOutlineEdit /> <span>Edit</span>
           </button>
-          <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-400 hover:bg-gray-400 dark:hover-zinc-500 py-1 px-6">
-            Share profile
+          <button className="rounded flex justify-center gap-2  items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-400 hover:bg-gray-400 dark:hover-zinc-500 py-1 px-6">
+          <MdOutlineShare /> <span>Share</span>
           </button>
           <button className="rounded flex justify-center items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-400 py-1 px-2">
             <AiOutlineUserAdd />
@@ -128,7 +128,7 @@ const Profile = () => {
           {/* pro pic */}
           <div className="flex justify-center h-auto gap-2">
             <img
-              className="w-28 h-28 border-2 border-gray-300 dark:border-transparent rounded-full"
+              className="w-28 h-28 border-4 p-1 border-blue-400 dark:border-transparent rounded-full"
               src={userProfile.pfp}
               alt="pro_pic"
             />
@@ -136,18 +136,18 @@ const Profile = () => {
           {/* right section of pro pic */}
           <div className="flex flex-col h-10 gap-4 md:gap-2 items-center justify-start">
             <span className="flex items-center">
-              <span className="text-lg font-medium dark:text-white">
-                {userProfile.handleId}
+              <span className="text-lg font-medium text-sky-500 cursor-pointer dark:text-white">
+                @{userProfile.handleId}
               </span>
               {/* Edit profile etc buttons */}
               <div className="flex xxs:gap-[5px] w-full justify-center sm:justify-start xs:gap-2 px-3">
-                <button className="rounded-lg flex justify-center items-center text-sm font-semibold bg-gray-300 py-2 px-4 md:px-3 hover:bg-gray-400 hover:dark:bg-zinc-600 dark:text-white dark:bg-zinc-500">
-                  Edit profile
+                <button className="rounded-lg flex justify-center gap-1 items-center text-sm font-semibold bg-gray-200 py-2 px-4 md:px-3 hover:bg-gray-300 hover:dark:bg-zinc-400 dark:text-white dark:bg-zinc-500">
+                <MdOutlineEdit /> <span>Edit</span> 
                 </button>
-                <button className="rounded-lg flex justify-center items-center text-sm font-semibold bg-gray-300 dark:bg-zinc-500 py-1 px-4 md:px-3 hover:bg-gray-400 hover:dark:bg-zinc-600 dark:text-white">
-                  Share profile
+                <button className="rounded-lg flex gap-1 justify-center items-center text-sm font-semibold bg-gray-200 dark:bg-zinc-500 py-1 px-4 md:px-3 hover:bg-gray-300 hover:dark:bg-zinc-400 dark:text-white">
+                <MdOutlineShare /> <span>Share</span>
                 </button>
-                <button className="rounded-lg flex justify-center items-center text-2xl font-semibold px-2 dark:text-white">
+                <button className="rounded-lg flex gap-1 justify-center items-center text-lg font-semibold bg-gray-200 dark:bg-zinc-500 p-1 md:px-2 hover:bg-gray-300 hover:dark:bg-zinc-400 dark:text-white">
                   <IoIosSettings />
                 </button>
               </div>
@@ -161,7 +161,7 @@ const Profile = () => {
               </div>
               <div className="followers flex gap-2 items-center mr-5">
                 <span className="font-bold">{userProfile.followers}</span>
-                <span className="text-xs font-medium">Followers</span>
+                <span className="text-xs font-medium">Connections</span>
               </div>
               <div className="following flex gap-2 items-center mr-10">
                 <span className="font-bold">{userProfile.following}</span>
@@ -184,7 +184,7 @@ const Profile = () => {
 
               <div>
               <span className="flex px-5 w-full justify-start items-center">
-            <div className="flex justify-center items-center p-3 border-[1px] text-xl border-gray-400 dark:text-white relative rounded-full w-14 h-14">
+            <div className="flex justify-center items-center p-3 border-[1px] text-xl border-gray-400 dark:text-white relative rounded-full w-14 h-14 cursor-pointer">
               <IoMdAdd />
               <span className="text-[10px] tracking-tighter text-gray-400 absolute top-14 font-medium">
                 New

@@ -7,7 +7,7 @@ import { BiMoviePlay } from "react-icons/bi";
 import { userProfile } from "../Data";
 import { FaCaretLeft, FaCaretRight, FaRegCompass, FaRegHeart } from "react-icons/fa";
 import { RiMessengerLine } from "react-icons/ri";
-import { IoIosHelpCircleOutline } from "react-icons/io";
+import { IoIosHelpCircleOutline, IoMdNotificationsOutline } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 import NavMore from "./NavMore";
@@ -80,7 +80,7 @@ const LeftNavBar = () => {
         <Link to={"#"}>
           <span className="flex gap-4 h-12 py-1 px-2 rounded-lg items-center text-md hover:bg-gray-100 hover:dark:bg-zinc-800 tracking-tight transition-all delay-75">
             <BiMoviePlay className="text-[28px] " />
-            {!hideNav && "Reels"}
+            {!hideNav && "Shorts"}
           </span>
         </Link>
         <Link to={"#"}>
@@ -92,14 +92,14 @@ const LeftNavBar = () => {
         </Link>
         <Link to={"#"}>
           <span className="flex gap-4 h-12 py-1 px-2 rounded-lg items-center text-md hover:bg-gray-100 hover:dark:bg-zinc-800 tracking-tight transition-all delay-75">
-            <FaRegHeart className="text-[28px] " />
+            <IoMdNotificationsOutline className="text-[28px] " />
            {!hideNav && " Notifications"}
           </span>
         </Link>
         <Link to={"#"}>
           <span className="flex gap-4 h-12 py-1 px-2 rounded-lg items-center text-md hover:bg-gray-100 hover:dark:bg-zinc-800 tracking-tight transition-all delay-75">
             <MdOutlineAddBox className="text-[28px] " />
-          {!hideNav && "  Create"}
+          {!hideNav && "  Make"}
           </span>
         </Link>
         <Link to={"/profile"}>

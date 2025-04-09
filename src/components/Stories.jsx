@@ -30,9 +30,9 @@ const Stories = () => {
 
         <Swiper
          slidesPerView={
-          (windowWidth <= 320) ? 2
+          (windowWidth <= 320) ? 4
           :
-          (windowWidth > 320 && windowWidth <= 425) ? 3
+          (windowWidth > 320 && windowWidth <= 425) ? 5
           :
           (windowWidth > 425 && windowWidth <= 640) ? 6
           : 8          
