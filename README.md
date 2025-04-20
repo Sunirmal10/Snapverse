@@ -1,7 +1,7 @@
 
 ## 🚀 About the Project
 
-**Snapverse** is a responsive social media website inspired by Instagram's UI/UX design. It's built using **React.js**, **Tailwind CSS**, and **Vite** to provide users with a seamless and interactive experience.
+**Snapverse** is a responsive front-end social media website inspired by Instagram's UI/UX design. It's built using **React.js**, **Tailwind CSS**, and **Vite** to provide users with a seamless and interactive experience.
 
 ---
 
