@@ -29,9 +29,15 @@
 
 ## 💻 Preview
 
+### Home Page (Light mode):
+
 ![Screenshot 2025-04-20 191053](https://github.com/user-attachments/assets/4da35721-6886-4c1c-be0f-fc8cd5755898)
 
+### Toggling Dark mode:
+
 ![snapdark](https://github.com/Sunirmal10/snapverse/assets/119140881/b3114875-668e-4fe2-b4ec-faa3d5d56092)
+
+### Profile Page(Small screen view):
 
 ![snapmobile](https://github.com/Sunirmal10/snapverse/assets/119140881/a53e7bbb-d66c-447f-a005-9b7910060ba0)
 
