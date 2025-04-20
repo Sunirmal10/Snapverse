@@ -33,7 +33,7 @@ const Profile = () => {
           {/* pro pic */}
           <div className="flex justify-center items-center gap-2">
             <img
-              className="w-16 h-16 border-2 border-blue-400  p-1 dark:border-transparent rounded-full"
+              className="w-16 h-16 border-2 border-violet-400  p-1 dark:border-transparent rounded-full"
               src={userProfile.pfp}
               alt="pro_pic"
             />
@@ -128,7 +128,7 @@ const Profile = () => {
           {/* pro pic */}
           <div className="flex justify-center h-auto gap-2">
             <img
-              className="w-28 h-28 border-4 p-1 border-blue-400 dark:border-transparent rounded-full"
+              className="w-28 h-28 border-4 p-1 border-violet-400 dark:border-transparent rounded-full"
               src={userProfile.pfp}
               alt="pro_pic"
             />
@@ -136,7 +136,7 @@ const Profile = () => {
           {/* right section of pro pic */}
           <div className="flex flex-col h-10 gap-4 md:gap-2 items-center justify-start">
             <span className="flex items-center">
-              <span className="text-lg font-medium text-sky-500 cursor-pointer dark:text-white">
+              <span className="text-lg font-medium text-violet-500 cursor-pointer dark:text-white">
                 @{userProfile.handleId}
               </span>
               {/* Edit profile etc buttons */}

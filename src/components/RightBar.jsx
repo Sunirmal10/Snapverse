@@ -10,8 +10,8 @@ const RightBar = () => {
 
   return (
     <div className='hidden xl:flex flex-col w-[18rem] m-2 ml-8 mr-16'>
+     
       <header className='flex w-full justify-between items-center mt-8'>
-      <Link to={"/profile"}>
           <div className='flex justify-center items-center gap-2'>
           <img
           className='w-12 h-12 border-2 border-gray-300 dark:border-transparent rounded-full'
@@ -20,9 +20,11 @@ const RightBar = () => {
        <span className='text-sm dark:text-white font-semibold'>{userProfile.handleId}</span>
            
           </div>          
+          <Link to={"/profile"}>
+        <span className='flex justify-center items-center p-1 rounded-md bg-violet-400 text-xs font-bold text-white cursor-pointer mt-2 w-12 h-6 hover:bg-violet-500'>View</span>
         </Link>
-        <span className='flex justify-center items-center p-1 rounded-md bg-blue-400 text-xs font-bold text-white cursor-pointer mt-2 w-12 h-6 hover:bg-blue-500'>Switch</span>
       </header>
+
       <main className='flex flex-col justify-center items-center'>
         <span className='flex w-full justify-between ic text-sm mt-4 mb-2 text-zinc-400 font-semibold'>
           <span>Recommended</span>
@@ -46,7 +48,7 @@ const RightBar = () => {
                  </span>
                 </div>          
               </Link>
-              <span className='flex justify-center items-center px-1 rounded-md bg-blue-400 text-xs font-bold text-white cursor-pointer mt-2 w-20 h-6 hover:bg-blue-500 gap-1'>
+              <span className='flex justify-center items-center px-1 rounded-md bg-violet-400 text-xs font-bold text-white cursor-pointer mt-2 w-20 h-6 hover:bg-violet-500 gap-1'>
               <IoMdPersonAdd />
                 Connect</span>
             </div>

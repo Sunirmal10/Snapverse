@@ -36,7 +36,7 @@ const AddPost = () => {
             <IoLocationSharp style={{color: 'salmon', cursor: 'pointer'}} />   
             </span>
             <button
-            className='flex justify-center items-center px-1 rounded-md bg-blue-400 text-sm font-semibold text-white cursor-pointer mt-2 w-16 h-8 hover:bg-blue-500 gap-1 active:scale-[0.9]'
+            className='flex justify-center items-center px-1 rounded-md bg-violet-400 text-sm font-semibold text-white cursor-pointer mt-2 w-16 h-8 hover:bg-violet-500 gap-1 active:scale-[0.9]'
             >Post</button>
         </span>
     </div>

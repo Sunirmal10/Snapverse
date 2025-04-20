@@ -52,7 +52,7 @@ const LeftNavBar = () => {
         {
           hideNav ? <span className={hideNav ? "flex w-7 h-7 text-[8px] font-sans items-center justify-center text-white pb-[2px] italic rounded-full bg-[#AAF] scale-100 transition-all delay-75" : "scale-0 flex transition-all delay-75"}>snap</span>
           :
-          <span className={hideNav ? "block scale-100 transition-all delay-75" : "scale-0 transition-all delay-75"}>SnapVerse</span>
+          <span className={hideNav ? "block scale-100 transition-all delay-75 text-violet-400" : "scale-0 transition-all delay-75 text-violet-400"}>SnapVerse</span>
         }
        </Link>
        <div className="text-gray-300 dark:text-zinc-500 cursor-pointer" onClick={handleHideNav}> { hideNav ? <FaCaretRight /> : <FaCaretLeft /> }</div>
@@ -85,7 +85,7 @@ const LeftNavBar = () => {
         </Link>
         <Link to={"#"}>
           <span className="flex gap-4 h-12 py-1 px-2 rounded-lg items-center text-md hover:bg-gray-100 hover:dark:bg-zinc-800 tracking-tight transition-all delay-75 relative">
-          <div className='flex justify-center items-center w-5 h-4 absolute top-2 left-5 bottom-3 p-1 font-medium bg-red-500 border-2 border-white dark:border-[#151515] rounded-full text-white text-[10px]'>10</div>
+          <div className='flex justify-center items-center w-5 h-4 absolute top-2 left-5 bottom-3 p-1 font-medium bg-violet-500 border-2 border-white dark:border-[#151515] rounded-full text-white text-[10px]'>10</div>
             <RiMessengerLine className="text-[28px] " />
            { !hideNav && "Messages"}
           </span>
