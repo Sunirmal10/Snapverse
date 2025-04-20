@@ -46,7 +46,7 @@ const Header = () => {
         <div className='flex justify-between gap-5 mr-2 mt-1 items-center text-2xl'>
         <FaRegHeart />
         <span className='relative'>
-            <div className='flex justify-center items-center w-5 h-4 absolute left-3 bottom-3 p-1 font-medium bg-red-500 rounded-full text-white text-[10px]'>10</div>
+            <div className='flex justify-center items-center w-5 h-4 absolute left-3 bottom-3 p-1 font-medium bg-violet-500 rounded-full text-white text-[10px]'>10</div>
             <RiMessengerLine />
         </span>
         </div>

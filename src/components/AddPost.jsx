@@ -8,7 +8,7 @@ import { PiSmileyFill } from 'react-icons/pi'
 const AddPost = () => {
   return (
     <div
-    className='hidden sm:flex xxs:w-[320px] xms:w-[375px] xs:w-[450px] max-w-[450px] flex-col tracking-tight sticky top-0 h-56 mb-1 px-4 pb-3 pt-2 dark:bg-[#151515] bg-white z-20 '
+    className='hidden sm:flex xxs:w-[320px] xms:w-[375px] xs:w-[450px] max-w-[450px] flex-col tracking-tight h-52 mb-1 px-4 pb-3 pt-2 dark:bg-[#151515] bg-white z-20 '
     >
         <section className='flex w-full h-20 px-2 justify-between items-center mb-1 text-sm dark:opacity-80 '>
             <span className='flex gap-1 px-1 items-center justify-center cursor-pointer text-sky-400 font-semibold'>
