@@ -1,3 +1,5 @@
+# 🌟 Snapverse
+---
 
 ## 🚀 About the Project
 
